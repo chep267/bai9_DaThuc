@@ -1,7 +1,9 @@
-package bth_9;
+package DT;
 
 import java.util.Scanner;
 import java.util.LinkedList;
+
+import static java.lang.Math.pow;
 
 class heso{
 
@@ -39,7 +41,7 @@ public class Dathuc {
             for (int i = 0; i < n+1; i++) {
                 d.hs[i] = hs[i] + p.hs[i];
             }
-            for (int i = n; i < p.n+1; i++) {
+            for (int i = n+1; i < p.n+1; i++) {
                 d.hs[i] = p.hs[i];
             }
             return d;
@@ -50,12 +52,19 @@ public class Dathuc {
                 d.hs[i] = hs[i] + p.hs[i];
             }
             for (int i = p.n; i < n+1; i++) {
-                d.hs[i] = hs[i]+1;
+                d.hs[i] = hs[i];
             }
             return d;
         }
     }
 
+    public double tinh(double x){
+        double s = 0;
+        for (int i = 0; i < n+1; i++) {
+           s += hs[i]*pow(x,i);
+        }
+        return s;
+    }
     public static void main(String[] args) {
         int m,n;
         Scanner sc= new Scanner(System.in);
@@ -67,8 +76,6 @@ public class Dathuc {
         Dathuc d1 = new Dathuc(n);
         d1.nhap();
 
-
-
         do {
             System.out.print("\nNhap bac cua da thuc 2: ");
             m= sc.nextInt();
@@ -77,6 +84,8 @@ public class Dathuc {
         Dathuc d2 = new Dathuc(m);
         d2.nhap();
 
+
+
         System.out.print("\nDa thuc vua nhap la: \n\tDa thuc 1: ");
         d1.in();
         System.out.print("\n\tDa thuc 2: ");
@@ -84,5 +93,8 @@ public class Dathuc {
         Dathuc d3 = d1.cong(d2);
         System.out.print("\nTong 2 DT la: ");
         d3.in();
+        System.out.print("\nNhap gia tri x: ");
+        Double x = sc.nextDouble();
+        System.out.print("\nDT 1 tai x = "+x+" la: "+d1.tinh(x));
     }
 }
