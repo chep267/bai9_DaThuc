@@ -1,4 +1,4 @@
-package DaThuc;
+package dathuc;
 
 public class TestDaThuc {
 
