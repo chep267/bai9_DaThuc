@@ -1,4 +1,4 @@
-package dathuc;
+package DaThuc;
 
 public class TestDaThuc {
 
@@ -17,11 +17,11 @@ public class TestDaThuc {
         d2.inDaThuc();
 
 
-        System.out.print("\nda thuc d1 cong hang tu (1,1) : ");
-        d1.congHangTu(b);
+        System.out.println("da thuc d1 cong hang tu (1,1) : ");
+        d1.addHangTu(b);
         d1.inDaThuc();
 
-        System.out.print("\nTong hai da thuc la: ");
+        System.out.println("Tong hai da thuc la: ");
         DaThuc d3 = d1.addDaThuc(d2);
         d3.inDaThuc();
     }
